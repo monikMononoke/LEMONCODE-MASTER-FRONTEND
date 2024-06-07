@@ -1,0 +1,32 @@
+$first-color: #1e5aff;
+$second-color: #e63005;
+$third-color: #b601fd;
+$forth-color: #00c040;
+
+@mixin darken-color($color-value: blue) {
+  $i: 4;
+  @while $i >= 1 {
+    .darken-#{$i} {
+      background-color: darken($color: $color-value, $amount: $i * 10%);
+
+      & > .color-box-text {
+        color: lighten($color: black, $amount: $i * 20%);
+      }
+    }
+    $i: $i - 1;
+  }
+}
+
+@mixin lighten-color($color-value: blue) {
+  $i: 1;
+  @while $i <= 4 {
+    .lighten-#{$i} {
+      background-color: lighten($color: $color-value, $amount: $i * 10%);
+
+      & > .color-box-text {
+        color: darken($color: white, $amount: $i * 20%);
+      }
+    }
+    $i: $i + 1;
+  }
+}

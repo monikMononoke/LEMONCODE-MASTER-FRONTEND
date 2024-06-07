@@ -1,0 +1,91 @@
+@use "base" as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 32px;
+  gap: 8px;
+
+  font: {
+    family: sans-serif;
+    weight: 500;
+    size: 16px;
+  }
+  text-transform: uppercase;
+}
+
+.box {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.container {
+  &-1 {
+    @extend .container;
+    @include darken-color($first-color);
+    @include lighten-color($first-color);
+
+    .box {
+      @extend .box;
+    }
+
+    .base-color {
+      background-color: $first-color;
+    }
+  }
+
+  &-2 {
+    @extend .container;
+    @include darken-color($second-color);
+    @include lighten-color($second-color);
+
+    .box {
+      @extend .box;
+    }
+
+    .base-color {
+      background-color: $second-color;
+    }
+  }
+
+  &-3 {
+    @extend .container;
+    @include darken-color($third-color);
+    @include lighten-color($third-color);
+
+    .box {
+      @extend .box;
+    }
+
+    .base-color {
+      background-color: $third-color;
+    }
+  }
+
+  &-4 {
+    @extend .container;
+    @include darken-color($forth-color);
+    @include lighten-color($forth-color);
+
+    .box {
+      @extend .box;
+    }
+
+    .base-color {
+      background-color: $forth-color;
+    }
+  }
+}
