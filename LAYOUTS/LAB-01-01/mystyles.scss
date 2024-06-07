@@ -32,6 +32,10 @@ body {
   border-radius: 4px;
 }
 
+.base-color {
+  color: white;
+}
+
 .container {
   &-1 {
     @extend .container;
@@ -43,6 +47,7 @@ body {
     }
 
     .base-color {
+      @extend .base-color;
       background-color: $first-color;
     }
   }
@@ -57,6 +62,7 @@ body {
     }
 
     .base-color {
+      @extend .base-color;
       background-color: $second-color;
     }
   }
@@ -85,6 +91,7 @@ body {
     }
 
     .base-color {
+      @extend .base-color;
       background-color: $forth-color;
     }
   }
