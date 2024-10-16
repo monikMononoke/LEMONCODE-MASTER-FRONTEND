@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 80px 1fr 80px;
+  grid-template-areas:
+    "header header header"
+    "nav  main main"
+    "footer footer footer";
+  color: #333;
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row: 1fr;
+
+  .search {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 25px;
+
+    input {
+      border-radius: 4px;
+      border: 1px solid #333;
+      height: 1.2rem;
+    }
+  }
+
+  .welcome {
+    padding: 10px;
+    background-color: rgb(223, 204, 32);
+    color: white;
+  }
+}
+
+nav {
+  grid-area: nav;
+  background-color: darkslateblue;
+}
+
+main {
+  grid-area: main;
+  background-color: lightcoral;
+}
+
+footer {
+  grid-area: footer;
+  background-color: darkcyan;
+}
