@@ -1,0 +1,20 @@
+@use "sass:color";
+@import "base";
+@import "light-theme";
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+  .base,
+  .important,
+  .warning,
+  .box {
+    @extend .basic-shape;
+    border-radius: 8px;
+  }
+}
