@@ -1,0 +1,37 @@
+@use "sass:color";
+
+$primary-color: darkslategray;
+$principal-font: Arial, sans-serif;
+$secondary-font: "Comic Sans MS", cursive;
+
+@mixin shadow-effect($shadow, $color) {
+  box-shadow: -3px 7px $shadow $color;
+
+  &:hover {
+    box-shadow: 3px 5px $shadow $color;
+  }
+}
+
+.container {
+  font-family: $secondary-font;
+  font-size: 1rem;
+
+  .base {
+    background-color: $primary-color;
+  }
+
+  .important {
+    background-color: color.scale($primary-color, $lightness: -50%);
+  }
+  .warning {
+    background-color: color.scale($primary-color, $lightness: 90%);
+  }
+
+  .fonts > p:nth-child(1) {
+    font-family: $principal-font;
+  }
+
+  .box {
+    @include shadow-effect(5px, #333);
+  }
+}
