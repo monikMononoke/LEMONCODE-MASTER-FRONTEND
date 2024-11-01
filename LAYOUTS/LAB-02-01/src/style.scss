@@ -88,8 +88,12 @@ main {
     gap: 12px;
     font-size: 20px;
 
-    #top-text {
+    #top-text-5 {
       font-weight: bold;
+    }
+
+    #top-text-3 {
+      display: none;
     }
   }
 
@@ -112,7 +116,7 @@ main {
   .second {
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
     img {
       width: 100%;
@@ -133,6 +137,23 @@ main {
   }
 
   main {
+    .section-title {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+
+      #top-text-5 {
+        display: none;
+      }
+
+      #top-text-3 {
+        display: block;
+        font-weight: bold;
+      }
+    }
+
     .top {
       flex-wrap: wrap-reverse;
 
