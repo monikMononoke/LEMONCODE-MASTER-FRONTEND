@@ -61,10 +61,16 @@ header {
 nav {
   grid-area: nav;
   background-color: $nav-background;
-  position: sticky;
-  top: 0;
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+  }
 
   .menu-container {
+    @media screen and (min-width: 768px) {
+      position: sticky;
+      top: 0;
+    }
     .menu-title {
       padding: 10px;
       background-color: $menu-title-background;
