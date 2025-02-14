@@ -119,18 +119,20 @@ class SlotMachine {
 
   play() {
     const array: boolean[] = [];
+
     for (let i = 0; i <= 2; i++) {
       array.push(Math.random() >= 0.5);
-      this.#coins += 1;
     }
 
-    const find = array.find((element) => element !== true);
+    const findFalse = array.find((element) => element !== true);
 
-    if (find !== false) {
+    if (findFalse === false) {
+      console.log("Good luck next time!");
+    } else {
+      this.#coins += 3;
       console.log(`Congratulations!!!. You won ${this.#coins} coins!!`);
     }
-    this.#coins -= 1;
-    console.log("Good luck next time!!");
+    this.#coins = 0;
   }
 }
 
