@@ -115,14 +115,22 @@ console.log(isBookRead(books, "Los Pilares de la Tierra")); // false
 // 5. SLOT MACHINE
 
 class SlotMachine {
+  #coins: number = 0;
+
   play() {
     const array: boolean[] = [];
-    for (let i = 0; i <= 2; i++) array.push(Math.random() >= 0.5);
+    for (let i = 0; i <= 2; i++) {
+      array.push(Math.random() >= 0.5);
+      this.#coins += 1;
+    }
 
     const find = array.find((element) => element !== true);
-    find === false
-      ? console.log("Good luck next time!!")
-      : console.log("Congratulations!!!. You won 3 coins!!");
+
+    if (find !== false) {
+      console.log(`Congratulations!!!. You won ${this.#coins} coins!!`);
+    }
+    this.#coins = 0;
+    console.log("Good luck next time!!");
   }
 }
 
