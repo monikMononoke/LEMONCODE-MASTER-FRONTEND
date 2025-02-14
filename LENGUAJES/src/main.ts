@@ -129,7 +129,7 @@ class SlotMachine {
     if (find !== false) {
       console.log(`Congratulations!!!. You won ${this.#coins} coins!!`);
     }
-    this.#coins = 0;
+    this.#coins -= 1;
     console.log("Good luck next time!!");
   }
 }
