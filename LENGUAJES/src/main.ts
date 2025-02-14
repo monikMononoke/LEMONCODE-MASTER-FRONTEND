@@ -121,8 +121,8 @@ class SlotMachine {
 
     const find = array.find((element) => element !== true);
     find === false
-      ? console.log("Suerte la próxima vez!")
-      : console.log("Has ganado!");
+      ? console.log("Good luck next time!!")
+      : console.log("Congratulations!!!. You won 3 coins!!");
   }
 }
 
