@@ -115,24 +115,32 @@ console.log(isBookRead(books, "Los Pilares de la Tierra")); // false
 // 5. SLOT MACHINE
 
 class SlotMachine {
-  #coins: number = 0;
+  coins: number = 0;
+
+  #addCoins() {
+    this.coins += 1;
+  }
+
+  #resetCoins() {
+    this.coins = 0;
+  }
 
   play() {
-    const array: boolean[] = [];
+    this.#addCoins();
 
+    let array: boolean[] = [];
     for (let i = 0; i <= 2; i++) {
       array.push(Math.random() >= 0.5);
     }
 
-    const findFalse = array.find((element) => element !== true);
+    const isFalse: boolean = array.find((item) => item === false);
 
-    if (findFalse === false) {
-      console.log("Good luck next time!");
+    if (isFalse === false) {
+      console.log(`Good luck next time!`);
     } else {
-      this.#coins += 3;
-      console.log(`Congratulations!!!. You won ${this.#coins} coins!!`);
+      console.log(`Congratulations!!! You won ${this.coins} coins`);
+      this.#resetCoins();
     }
-    this.#coins = 0;
   }
 }
 
