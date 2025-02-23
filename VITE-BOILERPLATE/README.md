@@ -119,15 +119,19 @@ $ npm install @types/react @types/react-dom --save-dev
 "jsx": "react-jsx",
 ```
 
+Instalar el plugin de Vite para React, para asegurarnos de que el bundler pueda traspilar correctamente el código escrito en React. También permite añadir presets para Babel.
+
 4. Cambiamos main.ts a main.tsx y le añadimos contenido escrito en .tsx
 
 ## Compatibilidad con navegadores antiguos:
 
-1. Vamos a instalar el plugin legacy:
+1. Vamos a instalar el plugin legacy, que se encarga de crear polyfils para los navegadores que no soportan módulos, de manera nativa:
 
 ```bash
 $ npm add -D @vitejs/plugin-legacy
 ```
+
+Este plugin utiliza @babel/preset-env para la traspilación final.
 
 2. Añadimos configuración en el archivo vite.config.ts. El archivo queda de la siguiente manera:
 
@@ -142,6 +146,7 @@ export default defineConfig({
     checker({ typescript: true }),
     legacy({
       targets: ["defaults", "not IE 11"],
+      additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
     }),
   ],
   build: {

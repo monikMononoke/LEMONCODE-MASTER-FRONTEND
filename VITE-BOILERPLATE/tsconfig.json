@@ -2,7 +2,8 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "isolatedModules": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": ["es5", "ESNext", "DOM"],
+    "allowJs": true,
     "module": "ESNext",
     "moduleResolution": "Node",
     "noEmit": true,
@@ -11,7 +12,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "target": "ESNext",
+    "target": "ES5",
     "useDefineForClassFields": true
   },
   "include": ["src"]
